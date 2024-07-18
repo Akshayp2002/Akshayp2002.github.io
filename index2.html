@@ -27,6 +27,21 @@
             font-family: Raleway", sans-serif;
 
         }
+
+        #scroll-container {
+            animation: scroll 15s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(calc(-100% - 4px));
+                /* Adjust 4px to match the gap */
+            }
+        }
     </style>
 </head>
 
@@ -67,7 +82,7 @@
     <div class="container mx-auto grid grid-cols-2  lg:grid-cols-4 gap-4 p-4 px-12 xl:px-32 pb-20 content">
         <!-- Profile and experience -->
         <div
-            class="bg-white col-span-2 md:col-span-1 lg:col-span-3 lg:row-span-2 rounded-[30px] p-16 sm:p-16 flex flex-col gap-4 h-[560px] hover:shadow-lg">
+            class="bg-white bg-[url('/assets2/img/bloab_blue.svg')] bg-cover bg-no-repeat col-span-2 md:col-span-1 lg:col-span-3 lg:row-span-2 rounded-[30px] p-16 sm:p-16 flex flex-col gap-4 h-[560px] hover:shadow-lg">
             <div class="relative inline-block">
                 <div class="flex items-center">
                     <img class="w-10 lg:w-16" src="/assets2/rocket.svg" alt="">
@@ -106,7 +121,7 @@
                                 </div>
                                 <div
                                     class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
-                                    
+
                                 </div>
                             </div>
                             <div
@@ -217,97 +232,176 @@
         </div>
         <!-- row 2 vertical  skills -->
         <div
-            class="bg-[url('/assets2/img/Topographic.svg')] md:row-span-2 col-span-2 md:col-span-1 bg-white rounded-[30px] static relative h-[560px] hover:shadow-lg overflow-hidden flex">
+            class="relative bg-[url('/assets2/img/Topographic.svg')] md:row-span-2 col-span-2 md:col-span-1 bg-white rounded-[30px] hover:shadow-lg overflow-hidden">
+            <div id="scroll-container" class="grid gap-4 grid-cols-3 content-center absolute p-4 animate-scroll">
+                <!-- condent start  -->
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/html5.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/css3.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/bootstrap.svg" alt="">
+                </div>
+                <!--  -->
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/mysql.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/vitejs.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/php.svg" alt="">
+                </div>
+                <!--  -->
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/github.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/js.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/jira.svg" alt="">
+                </div>
+                <!--  -->
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/laravel.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/tailwindcss.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/postman.svg" alt="">
+                </div>
+                <!--  -->
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/apidog-icon.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/aws.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/linux.svg" alt="">
+                </div>
+                <!--  -->
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/vscode.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/jquery.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/openai.svg" alt="">
+                </div>
+                <!--  -->
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/atlassian.svg" alt="">
+                </div>
+                <div
+                    class="bg-white w-20 h-20 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                    <img class="w-10 lg:w-12" src="/assets2/img/spatie.svg" alt="">
+                </div>
 
-            <div class="grid gap-4 grid-cols-3 rotate-[35deg] content-center absolute bottom-20 -right-20">
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/html5.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/php.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <!-- <img class="w-10 lg:w-16" src="/assets2/img/Party popper.svg" alt=""> -->
-                </div>
-                <!--  -->
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/mysql.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/vitejs.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <!-- <img class="w-10 lg:w-16" src="/assets2/img/Party popper.svg" alt=""> -->
-                </div>
-                <!--  -->
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/github.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/js.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/jira.svg" alt="">
-                </div>
-                <!--  -->
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/laravel.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/tailwindcss.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/postman.svg" alt="">
-                </div>
-                <!--  -->
-                <div>
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/php.svg" alt="">
-                </div>
-                <div>
-                </div>
+                <!-- condent end  -->
 
-            </div>
-            <div
-                class="bg-white w-10 h-10 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center ring-1 ring-gray-400 hover:ring-4 hover:ring-gray-200">
-                <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18.256 18.256"
-                    style="transition:.3s">
-                    <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
-                        <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
-                            transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5"></path>
-                        <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
-                            transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5"></path>
-                    </g>
-                    <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
-                </svg>
             </div>
         </div>
+
+
         <!-- Projects -->
         <div id="projects"
-            class="bg-white col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-2 rounded-[30px] p-6 md:p-10 flex flex-col justify-between hover:shadow-lg">
+            class="bg-white bg-[url('/assets2/img/bloab_pink.svg')] bg-cover col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-2 rounded-[30px] p-6 md:p-10 flex flex-col hover:shadow-lg ">
             <div class="flex items-center">
                 <img class="w-10 lg:w-16" src="/assets2/cursor.svg" alt="">
                 <h1 class="text-2xl font-semibold mb-6">Projects</h1>
             </div>
-            <div>
 
+            <div class="grid gap-2 grid-cols-3 content-center mt-8">
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img src="./assets2/img/hinez.png" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 1</p>
+                </div>
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img src="./assets2/img/hinez.png" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 2</p>
+                </div>
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img src="./assets2/img/hinez.png" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 3</p>
+                </div>
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img src="./assets2/img/hinez.png" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 4</p>
+                </div>
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg p-2">
+                        <img src="./assets2/Image Placeholder.svg" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 5</p>
+                </div>
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg p-2">
+                        <img src="./assets2/Image Placeholder.svg" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 6</p>
+                </div>
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg p-2">
+                        <img src="./assets2/Image Placeholder.svg" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 7</p>
+                </div>
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg p-2">
+                        <img src="./assets2/Image Placeholder.svg" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 8</p>
+                </div>
+                <div>
+                    <div
+                        class="bg-white w-84 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg p-2">
+                        <img src="./assets2/Image Placeholder.svg" alt="">
+                    </div>
+                    <p class="leading-tight text-sm text-justify m-2">Project 9</p>
+                </div>
             </div>
+
         </div>
         <!-- Linked In -->
 
@@ -375,31 +469,60 @@
         <!-- row 2 education -->
 
         <div
-            class="bg-[#98d0ff] md:row-span-2 col-span-2 md:col-span-2 rounded-[30px] static relative h-[560px] hover:shadow-lg overflow-hidden">
-            <div class="absolute -right-48 z-50 top-48">
-                <img class="w-[26rem] md:w-[28rem] h-60 md:h-60 rounded-lg rotate-[-35deg]"
-                    src="./assets2/img/swiftrevel.png" alt="hinez">
-            </div>
-            <div class="bg-[#ffc6d7] rounded-bl-full w-48 h-52 xl:w-52 xl:h-48 absolute top-0 right-0">
-            </div>
-            <!-- right top arrow -->
-            <div
-                class="group bg-white w-10 h-10 hover:w-28 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center hover:ring-4 ring-gray-200">
-                <p class="hidden group-hover:block">Go to</p>
-                <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18.256 18.256"
-                    style="transition:.3s">
-                    <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
-                        <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
-                            transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5"></path>
-                        <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
-                            transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5"></path>
-                    </g>
-                    <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
-                </svg>
+            class="bg-[url('/assets2/img/bloab_green.svg')] bg-cover col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-2 rounded-[30px] p-16 sm:p-16 flex flex-col gap-4 h-[560px] hover:shadow-lg">
+            <div class="relative inline-block">
+                <div class="flex items-center">
+                    <img class="w-10 lg:w-16" src="/assets2/rocket.svg" alt="">
+                    <h1 class="text-2xl font-semibold mb-6">Education</h1>
+                </div>
+                <div class="">
+                    <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
+
+                        <div class="flex md:contents">
+                            <div class="col-start-2 col-end-1 mr-10 md:mx-auto relative">
+                                <div class="h-full w-6 flex items-center justify-center">
+                                    <div class="h-full w-1 bg-yellow-500 pointer-events-none"></div>
+                                </div>
+                                <div
+                                    class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-yellow-500 shadow text-center">
+
+                                </div>
+                            </div>
+                            <div
+                                class="bg-green-500 col-start-2 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                <h3 class="font-semibold text-sm mb-1">BCA</h3>
+                                <h2 class="font-semibold text-sm mb-1">Manipal University</h2>
+                                <p class="leading-tight text-sm  text-justify w-full">
+                                    Augest 2024, Present
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Computer Engineerting -->
+                        <div class="flex md:contents">
+                            <div class="col-start-2 col-end-1 mr-10 md:mx-auto relative">
+                                <div class="h-full w-6 flex items-center justify-center">
+                                    <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                </div>
+                                <div
+                                    class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
+
+                                </div>
+                            </div>
+                            <div
+                                class="bg-green-500 col-start-2 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                <h3 class="font-semibold text-sm mb-1">Diploma Computer Engineering</h3>
+                                <h2 class="font-semibold text-sm mb-1">NTTF Banglore</h2>
+                                <p class="leading-tight text-sm text-justify">
+                                    June 2020, February 2022
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
         <!-- about me -->
         <div
             class="bg-white col-span-2 md:col-span-1 lg:col-span-2 rounded-[30px] p-6 lg:p-10 h-[280px] flex flex-col justify-between hover:shadow-lg bg-cover bg-center">
@@ -514,5 +637,21 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+<script>
+    // JavaScript to clone existing images for seamless loop
+    const scrollContainer = document.getElementById('scroll-container');
+
+    // Function to clone and append existing images for seamless loop
+    function cloneImages() {
+        const images = scrollContainer.querySelectorAll('.bg-white');
+        images.forEach(image => {
+            const clone = image.cloneNode(true);
+            scrollContainer.appendChild(clone);
+        });
+    }
+
+    // Call the function to clone images
+    cloneImages();
+</script>
 
 </html>
