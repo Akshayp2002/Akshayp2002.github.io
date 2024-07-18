@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshay</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind.js"></script>
+    <script src="/styles.css"></script>
+    <script>
+        window.addEventListener('load', function () {
+            // Hide the loading screen
+            document.getElementById('loadingScreen').style.display = 'none';
+            // Show the content
+            document.getElementById('content').classList.remove('hidden');
+        });
+    </script>
     <link rel="stylesheet" href="assets2/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="/flowbite.min.css" rel="stylesheet" />
 
     <style>
         .polka {
@@ -27,219 +32,267 @@
             font-family: Raleway", sans-serif;
 
         }
+
+        /* Loading screen overlay */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent white background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            /* Ensure loading screen is on top */
+        }
+
+        #scroll-container {
+            animation: scroll 15s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(calc(-100% - 4px));
+                /* Adjust 4px to match the gap */
+            }
+        }
     </style>
 </head>
 
 <body class="bg-[#f7f2f2] polka">
+    <div id="loadingScreen" class="loading-screen">
 
-    <nav class="w-full z-20 top-0 start-0 h-20 mb-6">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[20px]">Akshay
-            </h2>
-            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-
-                <button data-collapse-toggle="navbar-sticky"
-                    class="rounded-full bg-white relative flex hover:ring-4 ring-gray-200 border-2 border-gray-200 md:hidden"
-                    aria-controls="navbar-sticky" aria-expanded="false">
-                    <img class="w-10 lg:w-16" src="/assets2/download.svg" alt="">
-                </button>
-            </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 z-20 p-5"
-                id="navbar-sticky">
-                <ul
-                    class="flex flex-col p-3 md:p-0 mt-4 font-medium rounded-[30px] md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-[#ede9e9]">
-                    <a href="index.html">
-                        <li
-                            class="bg-white rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
-                            All
-                        </li>
-                    </a>
-                    <a href="index2.html">
-                        <li
-                            class="rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
-                            About
-                        </li>
-                    </a>
-                    <a href="#projects">
-                        <li
-                            class="rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
-                            Projects
-                        </li>
-                    </a>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container mx-auto grid grid-cols-2  lg:grid-cols-4 gap-4 p-4 px-12 xl:px-32 pb-20 content">
-        <!-- Profile Card -->
-        <div
-            class="bg-white col-span-2 md:col-span-1 lg:col-span-2 rounded-[30px] p-6 sm:p-10 flex flex-col gap-4 h-[280px] hover:shadow-lg">
-            <img class="w-20 lg:w-24" src="/assets2/img/Me.png" alt="">
-            <div class="relative inline-block">
-                <p class="font-medium text-gray-500">I’m
-                    <span class="font-bold font-playwrite text-2xl text-black relative inline-block">
-                        Akshay
-                        <img src="/assets2/img/line-1.svg" alt="line" class="absolute -bottom-2 left-0 w-full h-4">
-                    </span>, a Software Developer from Kerala, India. I'm interested in PHP, Laravel, Tailwind Design,
-                    Startups,
-                    Technology
-                    and Music.
-                </p>
-            </div>
-        </div>
-        <!-- Maps -->
-        <div class="col-span-2 md:col-span-1 rounded-[30px] relative h-[280px] hover:shadow-lg">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0.001!2d75.780411!3d11.258753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1671220374408!5m2!1sen!2sus!15z10  "
-                width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-                style="border-radius: 20px;"></iframe>
-            <div
-                class="absolute inset-0 m-auto w-28 h-28 border border-[5px] border-white rounded-full flex items-center justify-center bg-sky-400/95">
-                <img src="/assets2/img/memoji-1.png" alt="Overlay Image" class="w-10">
-            </div>
-        </div>
-        <!-- row 2 vertical -->
-        <div
-            class="bg-[url('/assets2/img/Topographic.svg')] md:row-span-2 col-span-2 md:col-span-1 bg-white rounded-[30px] static relative h-[560px] hover:shadow-lg overflow-hidden flex">
-
-            <div class="grid gap-4 grid-cols-3 rotate-[35deg] content-center absolute bottom-20 -right-20">
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/html5.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/php.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <!-- <img class="w-10 lg:w-16" src="/assets2/img/Party popper.svg" alt=""> -->
-                </div>
-                <!--  -->
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/mysql.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/vitejs.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <!-- <img class="w-10 lg:w-16" src="/assets2/img/Party popper.svg" alt=""> -->
-                </div>
-                <!--  -->
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/github.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/js.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/jira.svg" alt="">
-                </div>
-                <!--  -->
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/laravel.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/tailwindcss.svg" alt="">
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/postman.svg" alt="">
-                </div>
-                <!--  -->
-                <div>
-                </div>
-                <div
-                    class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
-                    <img class="w-10 lg:w-16" src="/assets2/img/php.svg" alt="">
-                </div>
-                <div>
-                </div>
-
-            </div>
-            <div
-                class="bg-white w-10 h-10 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center ring-1 ring-gray-400 hover:ring-4 hover:ring-gray-200">
-                <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18.256 18.256"
-                    style="transition:.3s">
-                    <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
-                        <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
-                            transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5"></path>
-                        <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
-                            transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5"></path>
-                    </g>
-                    <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
+        <div class="absolute top-1/2 left-1/2 -mt-4 -ml-2 h-8 w-4 text-indigo-700">
+            <div class="absolute z-10 -ml-2 h-8 w-8 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="animate-spin" fill="currentColor" stroke="currentColor"
+                    stroke-width="0" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zM8 4c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4zM12.773 12.773c-1.275 1.275-2.97 1.977-4.773 1.977s-3.498-0.702-4.773-1.977-1.977-2.97-1.977-4.773c0-1.803 0.702-3.498 1.977-4.773l1.061 1.061c0 0 0 0 0 0-2.047 2.047-2.047 5.378 0 7.425 0.992 0.992 2.31 1.538 3.712 1.538s2.721-0.546 3.712-1.538c2.047-2.047 2.047-5.378 0-7.425l1.061-1.061c1.275 1.275 1.977 2.97 1.977 4.773s-0.702 3.498-1.977 4.773z">
+                    </path>
                 </svg>
             </div>
+            <div class="absolute top-4 h-5 w-4 animate-bounce border-l-2 border-gray-200" style="rotate: -90deg"></div>
+            <div class="absolute top-4 h-5 w-4 animate-bounce border-r-2 border-gray-200" style="rotate: 90deg"></div>
         </div>
-        <!-- Spotify -->
-        <div
-            class="bg-white col-span-2 md:col-span-1 lg:col-span-1 rounded-[30px] p-6 md:p-10 flex flex-col justify-between hover:shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" height="80" width="80" viewBox="-33.4974 -55.829 290.3108 334.974">
-                <path
-                    d="M177.707 98.987c-35.992-21.375-95.36-23.34-129.719-12.912-5.519 1.674-11.353-1.44-13.024-6.958-1.672-5.521 1.439-11.352 6.96-13.029 39.443-11.972 105.008-9.66 146.443 14.936 4.964 2.947 6.59 9.356 3.649 14.31-2.944 4.963-9.359 6.6-14.31 3.653m-1.178 31.658c-2.525 4.098-7.883 5.383-11.975 2.867-30.005-18.444-75.762-23.788-111.262-13.012-4.603 1.39-9.466-1.204-10.864-5.8a8.717 8.717 0 015.805-10.856c40.553-12.307 90.968-6.347 125.432 14.833 4.092 2.52 5.38 7.88 2.864 11.968m-13.663 30.404a6.954 6.954 0 01-9.569 2.316c-26.22-16.025-59.223-19.644-98.09-10.766a6.955 6.955 0 01-8.331-5.232 6.95 6.95 0 015.233-8.334c42.533-9.722 79.017-5.538 108.448 12.446a6.96 6.96 0 012.31 9.57M111.656 0C49.992 0 0 49.99 0 111.656c0 61.672 49.992 111.66 111.657 111.66 61.668 0 111.659-49.988 111.659-111.66C223.316 49.991 173.326 0 111.657 0"
-                    fill="#1ed660" />
-            </svg>
-            <div>
-                <p class="font-medium text-green-600 items-center flex">
-                    <svg width="28px" height="28px" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"
-                        fill="#26a269">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-                        <g id="SVGRepo_iconCarrier">
-                            <g fill="none" fill-rule="evenodd" stroke="#33d17a" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="m6.5 8.5v4" />
-                                <path d="m8.5 6.5v9" />
-                                <path d="m10.5 9.5v2" />
-                                <path d="m12.5 7.5v6.814" />
-                                <path d="m14.5 4.5v12" />
-                            </g>
-                        </g>
-                    </svg><span class="text-green-900 text-sm">Ofline, Last Played </span>
-                </p>
-                <h1 class="font-bold font-serif text-2xl">I Dont Belog</h1>
-                <p class="font-medium text-gray-500">Foundainess DC</p>
-            </div>
-        </div>
-        <!-- Linked In -->
+    </div>
+    <div id="content" class="hidden">
+        <nav class="w-full z-20 top-0 start-0 h-20 mb-6">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[20px]">Akshay
+                </h2>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
-        <div id="default-carousel" class="col-span-2 md:col-span-1 rounded-[30px] relative hover:shadow-md"
-            data-carousel="slide">
-            <!-- Carousel wrapper -->
-            <div class="relative overflow-hidden rounded-[30px] h-[280px]">
-                <!-- Item 1 Linked in-->
-                <div class="bg-[#0077b7] hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="absolute inset-0 block w-full flex items-center justify-center">
-                        <img class="w-28 lg:w-20" src="/assets2/linkedin.svg" alt="">
-                    </div>
+                    <button data-collapse-toggle="navbar-sticky"
+                        class="md:hidden"
+                        aria-controls="navbar-sticky" aria-expanded="false">
+                        <img class="w-14 lg:w-16" src="/assets2/menu.svg" alt="">
+                    </button>
                 </div>
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item
-                    style="background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);">
-                    <div class="absolute block w-full inset-0 block w-full flex items-center justify-center">
-                        <img class="w-28 lg:w-20" src="/assets2/instagram.svg" alt="">
-                    </div>
-                </div>
-                <!-- Item 3 Twitter -->
-                <div class="bg-[#98d0ff] hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="absolute block w-full inset-0 block w-full flex items-center justify-center">
-                        <img class="w-28 lg:w-20" src="/assets2/twitter.svg" alt="">
-                    </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 z-20 p-5"
+                    id="navbar-sticky">
+                    <ul
+                        class="flex flex-col p-3 md:p-0 mt-4 font-medium rounded-[30px] md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-[#ede9e9]">
+                        <a href="index.html">
+                            <li
+                                class="bg-white rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
+                                All
+                            </li>
+                        </a>
+                        <a href="index2.html">
+                            <li
+                                class="rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
+                                About
+                            </li>
+                        </a>
+                        <a href="#projects">
+                            <li
+                                class="rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
+                                Projects
+                            </li>
+                        </a>
+                    </ul>
                 </div>
             </div>
-            <!-- Slider indicators -->
-            <!-- <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        </nav>
+
+        <div class="container mx-auto grid grid-cols-2  lg:grid-cols-4 gap-4 p-4 px-12 xl:px-32 pb-20 content">
+            <!-- Profile Card -->
+            <div
+                class="bg-white col-span-2 md:col-span-1 lg:col-span-2 rounded-[30px] p-6 sm:p-10 flex flex-col gap-4 h-[280px] hover:shadow-lg">
+                <img class="w-20 lg:w-24" src="/assets2/img/Me.png" alt="">
+                <div class="relative inline-block">
+                    <p class="font-medium text-gray-500">I’m
+                        <span class="font-bold font-playwrite text-2xl text-black relative inline-block">
+                            Akshay
+                            <img src="/assets2/img/line-1.svg" alt="line" class="absolute -bottom-2 left-0 w-full h-4">
+                        </span>, a Software Developer from Kerala, India. I'm interested in PHP, Laravel, Tailwind
+                        Design,
+                        Startups,
+                        Technology
+                        and Music.
+                    </p>
+                </div>
+            </div>
+            <!-- Maps -->
+            <div class="col-span-2 md:col-span-1 rounded-[30px] relative h-[280px] hover:shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0.001!2d75.780411!3d11.258753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1671220374408!5m2!1sen!2sus!15z10  "
+                    width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen style="border-radius: 20px;"></iframe>
+                <div
+                    class="absolute inset-0 m-auto w-28 h-28 border border-[5px] border-white rounded-full flex items-center justify-center bg-sky-400/95">
+                    <img src="/assets2/img/memoji-1.png" alt="Overlay Image" class="w-10">
+                </div>
+            </div>
+            <!-- row 2 vertical -->
+            <div
+                class="bg-[url('/assets2/img/Topographic.svg')] md:row-span-2 col-span-2 md:col-span-1 bg-white rounded-[30px] static relative h-[560px] hover:shadow-lg overflow-hidden flex">
+
+                <div class="grid gap-4 grid-cols-3 rotate-[35deg] content-center absolute bottom-20 -right-20">
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/html5.svg" alt="">
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/php.svg" alt="">
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <!-- <img class="w-10 lg:w-16" src="/assets2/img/Party popper.svg" alt=""> -->
+                    </div>
+                    <!--  -->
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/mysql.svg" alt="">
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/vitejs.svg" alt="">
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <!-- <img class="w-10 lg:w-16" src="/assets2/img/Party popper.svg" alt=""> -->
+                    </div>
+                    <!--  -->
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/github.svg" alt="">
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/js.svg" alt="">
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/jira.svg" alt="">
+                    </div>
+                    <!--  -->
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/laravel.svg" alt="">
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/tailwindcss.svg" alt="">
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/postman.svg" alt="">
+                    </div>
+                    <!--  -->
+                    <div>
+                    </div>
+                    <div
+                        class="bg-white w-24 h-24 rounded-lg flex items-center justify-center drop-shadow-md hover:shadow-lg">
+                        <img class="w-10 lg:w-16" src="/assets2/img/php.svg" alt="">
+                    </div>
+                    <div>
+                    </div>
+
+                </div>
+                <div
+                    class="bg-white w-10 h-10 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center ring-1 ring-gray-400 hover:ring-4 hover:ring-gray-200">
+                    <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 18.256 18.256" style="transition:.3s">
+                        <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
+                            <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
+                                transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5"></path>
+                            <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
+                                transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5"></path>
+                        </g>
+                        <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
+                    </svg>
+                </div>
+            </div>
+            <!-- Spotify -->
+            <div
+                class="bg-white col-span-2 md:col-span-1 lg:col-span-1 rounded-[30px] p-6 md:p-10 flex flex-col justify-between hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80" width="80"
+                    viewBox="-33.4974 -55.829 290.3108 334.974">
+                    <path
+                        d="M177.707 98.987c-35.992-21.375-95.36-23.34-129.719-12.912-5.519 1.674-11.353-1.44-13.024-6.958-1.672-5.521 1.439-11.352 6.96-13.029 39.443-11.972 105.008-9.66 146.443 14.936 4.964 2.947 6.59 9.356 3.649 14.31-2.944 4.963-9.359 6.6-14.31 3.653m-1.178 31.658c-2.525 4.098-7.883 5.383-11.975 2.867-30.005-18.444-75.762-23.788-111.262-13.012-4.603 1.39-9.466-1.204-10.864-5.8a8.717 8.717 0 015.805-10.856c40.553-12.307 90.968-6.347 125.432 14.833 4.092 2.52 5.38 7.88 2.864 11.968m-13.663 30.404a6.954 6.954 0 01-9.569 2.316c-26.22-16.025-59.223-19.644-98.09-10.766a6.955 6.955 0 01-8.331-5.232 6.95 6.95 0 015.233-8.334c42.533-9.722 79.017-5.538 108.448 12.446a6.96 6.96 0 012.31 9.57M111.656 0C49.992 0 0 49.99 0 111.656c0 61.672 49.992 111.66 111.657 111.66 61.668 0 111.659-49.988 111.659-111.66C223.316 49.991 173.326 0 111.657 0"
+                        fill="#1ed660" />
+                </svg>
+                <div>
+                    <p class="font-medium text-green-600 items-center flex">
+                        <svg width="28px" height="28px" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"
+                            fill="#26a269">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                            <g id="SVGRepo_iconCarrier">
+                                <g fill="none" fill-rule="evenodd" stroke="#33d17a" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6.5 8.5v4" />
+                                    <path d="m8.5 6.5v9" />
+                                    <path d="m10.5 9.5v2" />
+                                    <path d="m12.5 7.5v6.814" />
+                                    <path d="m14.5 4.5v12" />
+                                </g>
+                            </g>
+                        </svg><span class="text-green-900 text-sm">Ofline, Last Played </span>
+                    </p>
+                    <h1 class="font-bold font-serif text-2xl">I Dont Belog</h1>
+                    <p class="font-medium text-gray-500">Foundainess DC</p>
+                </div>
+            </div>
+            <!-- Linked In -->
+
+            <div id="default-carousel" class="col-span-2 md:col-span-1 rounded-[30px] relative hover:shadow-md"
+                data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative overflow-hidden rounded-[30px] h-[280px]">
+                    <!-- Item 1 Linked in-->
+                    <div class="bg-[#0077b7] hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="absolute inset-0 block w-full flex items-center justify-center">
+                            <img class="w-28 lg:w-20" src="/assets2/linkedin.svg" alt="">
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item
+                        style="background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);">
+                        <div class="absolute block w-full inset-0 block w-full flex items-center justify-center">
+                            <img class="w-28 lg:w-20" src="/assets2/instagram.svg" alt="">
+                        </div>
+                    </div>
+                    <!-- Item 3 Twitter -->
+                    <div class="bg-[#98d0ff] hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="absolute block w-full inset-0 block w-full flex items-center justify-center">
+                            <img class="w-28 lg:w-20" src="/assets2/twitter.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <!-- <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
                 <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-white" aria-current="true"
                     aria-label="Slide 1" data-carousel-slide-to="0"></button>
                 <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-white" aria-current="false"
@@ -247,77 +300,109 @@
                 <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-white" aria-current="false"
                     aria-label="Slide 3" data-carousel-slide-to="2"></button>
             </div> -->
-            <!-- Slider controls -->
-            <button type="button"
-                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-prev>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-white-500 group-hover:bg-white/50 dark:group-hover:bg-gray-300/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:white group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-white rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 1 1 5l4 4" />
-                    </svg>
-                    <span class="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button"
-                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-next>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-white-500 group-hover:bg-white/50 dark:group-hover:bg-gray-300/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:white group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-white rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span class="sr-only">Next</span>
-                </span>
-            </button>
-        </div>
-        <!-- row 2 vertical -->
+                <!-- Slider controls -->
+                <button type="button"
+                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-white-500 group-hover:bg-white/50 dark:group-hover:bg-gray-300/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-white rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 1 1 5l4 4" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-white-500 group-hover:bg-white/50 dark:group-hover:bg-gray-300/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-white rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+            <!-- row 2 vertical -->
 
-        <div
-            class="bg-[#98d0ff] md:row-span-2 col-span-2 md:col-span-1 rounded-[30px] static relative h-[560px] hover:shadow-lg overflow-hidden">
-            <div class="absolute -right-48 z-50 top-48">
-                <img class="w-[26rem] md:w-[28rem] h-60 md:h-60 rounded-lg rotate-[-35deg]"
-                    src="./assets2/img/swiftrevel.png" alt="hinez">
-            </div>
-            <div class="bg-[#ffc6d7] rounded-bl-full w-48 h-52 xl:w-52 xl:h-48 absolute top-0 right-0">
-            </div>
-            <!-- right top arrow -->
             <div
-                class="group bg-white w-10 h-10 hover:w-28 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center hover:ring-4 ring-gray-200">
-                <p class="hidden group-hover:block">Go to</p>
-                <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18.256 18.256"
-                    style="transition:.3s">
-                    <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
-                        <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
-                            transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5"></path>
-                        <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
-                            transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5"></path>
-                    </g>
-                    <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
+                class="bg-[#98d0ff] md:row-span-2 col-span-2 md:col-span-1 rounded-[30px] static relative h-[560px] hover:shadow-lg overflow-hidden">
+                <div class="absolute -right-48 z-50 top-48">
+                    <img class="w-[26rem] md:w-[28rem] h-60 md:h-60 rounded-lg rotate-[-35deg]"
+                        src="./assets2/img/swiftrevel.png" alt="hinez">
+                </div>
+                <div class="bg-[#ffc6d7] rounded-bl-full w-48 h-52 xl:w-52 xl:h-48 absolute top-0 right-0">
+                </div>
+                <!-- right top arrow -->
+                <div
+                    class="group bg-white w-10 h-10 hover:w-28 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center hover:ring-4 ring-gray-200">
+                    <p class="hidden group-hover:block">Go to</p>
+                    <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 18.256 18.256" style="transition:.3s">
+                        <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
+                            <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
+                                transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5"></path>
+                            <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
+                                transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5"></path>
+                        </g>
+                        <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
+                    </svg>
+                </div>
+            </div>
+            <div
+                class="bg-white bg-[url('/assets2/img/doodle.png')] col-span-2 md:col-span-1 lg:col-span-2 rounded-[30px] p-6 lg:p-10 h-[280px] flex flex-col justify-between hover:shadow-lg bg-cover bg-center">
+                <div>
+                    <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[30px]">How it started vs. how
+                        it's
+                        going</h2>
+                    <p class="font-medium text-sky-700">A short personal history as it relates to design and
+                        development,
+                        and
+                        how I've found value in the
+                        cross-section between
+                        both disciplines.</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="index2.html">
+                        <button
+                            class="rounded-full bg-white relative flex hover:ring-4 ring-gray-200 p-2 px-4 border-2 border-gray-200">
+                            <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                viewBox="0 0 18.256 18.256" style="transition:.3s">
+                                <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
+                                    <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
+                                        transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
+                                        transform="translate(-7.756 -7)" fill="none" stroke="#0D1117"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </g>
+                                <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
+                            </svg>
+                            Read More
+                        </button>
+                    </a>
+                    <p class="text-gray-500">June 1 2024</p>
+                </div>
+            </div>
+            <!-- github -->
+            <div
+                class="bg-black col-span-2 md:col-span-1 rounded-[30px] flex items-center justify-center static relative p-20 h-[280px] hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" height="800" width="1200"
+                    viewBox="-74.4 -120.90175 644.8 725.4105" fill="#ffffff">
+                    <path
+                        d="M165.9 389.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2 .6-2-1.3-4.3-4.3-5.2-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 0C106.1 0 0 105.3 0 244c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5 21.3 0 42.8 2.9 62.8 8.5 0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 449.8 496 354.9 496 244 496 105.3 383.5 0 244.8 0zM97.2 344.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
                 </svg>
-            </div>
-        </div>
-        <div
-            class="bg-white bg-[url('/assets2/img/doodle.png')] col-span-2 md:col-span-1 lg:col-span-2 rounded-[30px] p-6 lg:p-10 h-[280px] flex flex-col justify-between hover:shadow-lg bg-cover bg-center">
-            <div>
-                <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[30px]">How it started vs. how it's
-                    going</h2>
-                <p class="font-medium text-sky-700">A short personal history as it relates to design and development,
-                    and
-                    how I've found value in the
-                    cross-section between
-                    both disciplines.</p>
-            </div>
-            <div class="flex justify-between items-center">
-                <a href="index2.html">
-                    <button
-                        class="rounded-full bg-white relative flex hover:ring-4 ring-gray-200 p-2 px-4 border-2 border-gray-200">
+                <a href="https://github.com/Akshayp2002" target="_blank">
+                    <div
+                        class="group bg-white w-10 h-10 hover:w-28 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center hover:ring-4 ring-gray-200">
+                        <p class="hidden group-hover:block">Git Hub</p>
                         <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                             viewBox="0 0 18.256 18.256" style="transition:.3s">
                             <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
@@ -330,93 +415,66 @@
                             </g>
                             <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
                         </svg>
-                        Read More
-                    </button>
-                </a>
-                <p class="text-gray-500">June 1 2024</p>
-            </div>
-        </div>
-        <!-- github -->
-        <div
-            class="bg-black col-span-2 md:col-span-1 rounded-[30px] flex items-center justify-center static relative p-20 h-[280px] hover:shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" height="800" width="1200" viewBox="-74.4 -120.90175 644.8 725.4105"
-                fill="#ffffff">
-                <path
-                    d="M165.9 389.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2 .6-2-1.3-4.3-4.3-5.2-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 0C106.1 0 0 105.3 0 244c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5 21.3 0 42.8 2.9 62.8 8.5 0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 449.8 496 354.9 496 244 496 105.3 383.5 0 244.8 0zM97.2 344.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-            </svg>
-            <a href="https://github.com/Akshayp2002" target="_blank">
-                <div
-                    class="group bg-white w-10 h-10 hover:w-28 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center hover:ring-4 ring-gray-200">
-                    <p class="hidden group-hover:block">Git Hub</p>
-                    <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 18.256 18.256" style="transition:.3s">
-                        <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
-                            <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
-                                transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5"></path>
-                            <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
-                                transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5"></path>
-                        </g>
-                        <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
-                    </svg>
-                </div>
-            </a>
-        </div>
-        <!-- Yellow card -->
-        <div class="bg-[#ffe3a4] col-span-2 rounded-[30px] relative h-[280px] hover:shadow-lg overflow-hidden">
-            <div class="absolute right-0 z-50">
-                <img class="w-[20rem] md:w-[28rem] h-48 sm:h-60 md:h-64 rounded-lg rotate-[-35deg]"
-                    src="./assets2/img/hinez.png" alt="hinez">
-            </div>
-            <div class="bg-[#ffc6d7] rounded-t-full w-56 h-28 lg:w-80 lg:h-44 absolute bottom-0">
-            </div>
-            <!-- right top arrow -->
-            <a href="https://myhinez.com/" target="_blank">
-                <div
-                    class="bg-white w-10 h-10 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center hover:ring-4 ring-gray-200 ">
-                    <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 18.256 18.256" style="transition:.3s">
-                        <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
-                            <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
-                                transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5"></path>
-                            <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
-                                transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5"></path>
-                        </g>
-                        <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
-                    </svg>
-                </div>
-            </a>
-        </div>
-        <!-- Last card -->
-        <div
-            class="bg-white col-span-2 rounded-[30px] relative h-[280px] hover:shadow-lg p-4 px-12 pb-20 overflow-hidden">
-            <div class="bg-[#98d0ff] rounded-bl-full w-48 h-44 absolute top-0 right-0 flex items-center justify-center">
-                <a href="https://drive.google.com/uc?export=download&id=1z8qQnXCCrZhcK4x0mmtytyW7FNt1eRqf" download
-                    target="_blank" class="block w-full h-full flex items-center justify-center">
-                    <button
-                        class="rounded-full bg-white relative flex hover:ring-4 ring-gray-200 border-2 border-gray-200">
-                        <img class="w-10 lg:w-16" src="/assets2/download.svg" alt="">
-                    </button>
+                    </div>
                 </a>
             </div>
-            <img class="w-16 lg:w-16 relative" src="/assets2/Party popper.svg" alt="">
-            <h2 class="font-bold font-raleway text-[25px] lg:text-[30px] relative">Get In Touch</h2>
-            <p class="font-medium text-gray-500 relative">sr.dev.akshay@gmail.com</p>
+            <!-- Yellow card -->
+            <div class="bg-[#ffe3a4] col-span-2 rounded-[30px] relative h-[280px] hover:shadow-lg overflow-hidden">
+                <div class="absolute right-0 z-50">
+                    <img class="w-[20rem] md:w-[28rem] h-48 sm:h-60 md:h-64 rounded-lg rotate-[-35deg]"
+                        src="./assets2/img/hinez.png" alt="hinez">
+                </div>
+                <div class="bg-[#ffc6d7] rounded-t-full w-56 h-28 lg:w-80 lg:h-44 absolute bottom-0">
+                </div>
+                <!-- right top arrow -->
+                <a href="https://myhinez.com/" target="_blank">
+                    <div
+                        class="bg-white w-10 h-10 rounded-full absolute bottom-0 left-0 m-4 flex justify-center items-center hover:ring-4 ring-gray-200 ">
+                        <svg id="Arrow.7" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 18.256 18.256" style="transition:.3s">
+                            <g id="Group_7" data-name="Group 7" transform="translate(5.363 5.325)">
+                                <path id="Path_10" data-name="Path 10" d="M14.581,7.05,7.05,14.581"
+                                    transform="translate(-7.05 -7.012)" fill="none" stroke="#0D1117"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                <path id="Path_11" data-name="Path 11" d="M10,7l5.287.037.038,5.287"
+                                    transform="translate(-7.756 -7)" fill="none" stroke="#0D1117" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5"></path>
+                            </g>
+                            <path id="Path_12" data-name="Path 12" d="M0,0H18.256V18.256H0Z" fill="none"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <!-- Last card -->
+            <div
+                class="bg-white col-span-2 rounded-[30px] relative h-[280px] hover:shadow-lg p-4 px-12 pb-20 overflow-hidden">
+                <div
+                    class="bg-[#98d0ff] rounded-bl-full w-48 h-44 absolute top-0 right-0 flex items-center justify-center">
+                    <a href="https://drive.google.com/uc?export=download&id=1z8qQnXCCrZhcK4x0mmtytyW7FNt1eRqf" download
+                        target="_blank" class="block w-full h-full flex items-center justify-center">
+                        <button
+                            class="rounded-full bg-white relative flex hover:ring-4 ring-gray-200 border-2 border-gray-200">
+                            <img class="w-10 lg:w-16" src="/assets2/download.svg" alt="">
+                        </button>
+                    </a>
+                </div>
+                <img class="w-16 lg:w-16 relative" src="/assets2/Party popper.svg" alt="">
+                <h2 class="font-bold font-raleway text-[25px] lg:text-[30px] relative">Get In Touch</h2>
+                <p class="font-medium text-gray-500 relative">sr.dev.akshay@gmail.com</p>
 
-            <form action="mailto:sr.dev.akshay@gmail.com" method="post" enctype="text/plain" class="form" data-form
-                target="_blank">
-                <button type="submit"
-                    class="group bg-white w-10 h-10 hover:w-32 rounded-full absolute bottom-0 left-0 m-4 flex justify-center border items-center hover:ring-4 ring-gray-200">
-                    <p class="hidden group-hover:block">Contact me</p>
-                    <img class="w-5 lg:w-5" src="/assets2/arrow.svg" alt="">
-                </button>
-            </form>
+                <form action="mailto:sr.dev.akshay@gmail.com" method="post" enctype="text/plain" class="form" data-form
+                    target="_blank">
+                    <button type="submit"
+                        class="group bg-white w-10 h-10 hover:w-32 rounded-full absolute bottom-0 left-0 m-4 flex justify-center border items-center hover:ring-4 ring-gray-200">
+                        <p class="hidden group-hover:block">Contact me</p>
+                        <img class="w-5 lg:w-5" src="/assets2/arrow.svg" alt="">
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+<script src="/flowbite.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap" rel="stylesheet">
 
 </html>
