@@ -31,30 +31,45 @@
 </head>
 
 <body class="bg-[#f7f2f2] polka">
-    <div class="hidden lg:block">
-        <div class="h-20 flex justify-between p-4 mt-3 ">
+
+    <nav class="w-full z-20 top-0 start-0 h-20 mb-6">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[20px]">Akshay
             </h2>
-            <div class="flex justify-between rounded-full bg-[#ede9e9] p-2 gap-1">
-                <a href="index.html">
-                    <div class="bg-white rounded-full text-black w-16 text-center p-1">All</div>
-                </a>
-                <a href="index2.html">
-                    <div class="rounded-full text-black  w-20 text-center p-1">About</div>
-                </a>
-                <a href="index2.html#projects">
-                    <div class="rounded-full text-black  w-20 text-center p-1">Projects</div>
-                </a>
-                <a href="#">
-                    <div class="rounded-full text-black  w-20 text-center p-1">Media</div>
-                </a>
-            </div>
-            <div>...</div>
-        </div>
-    </div>
-    <!-- <div class="h-20">
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
-    </div> -->
+                <button data-collapse-toggle="navbar-sticky"
+                    class="rounded-full bg-white relative flex hover:ring-4 ring-gray-200 border-2 border-gray-200 md:hidden"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <img class="w-10 lg:w-16" src="/assets2/download.svg" alt="">
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 z-20 p-5"
+                id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-3 md:p-0 mt-4 font-medium rounded-[30px] md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-[#ede9e9]">
+                    <a href="index.html">
+                        <li
+                            class="bg-white rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
+                            All
+                        </li>
+                    </a>
+                    <a href="index2.html">
+                        <li
+                            class="rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
+                            About
+                        </li>
+                    </a>
+                    <a href="#projects">
+                        <li
+                            class="rounded w-full lg:rounded-full text-black text-center px-8 p-2 m-1 hover:bg-white items-center">
+                            Projects
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container mx-auto grid grid-cols-2  lg:grid-cols-4 gap-4 p-4 px-12 xl:px-32 pb-20 content">
         <!-- Profile Card -->
