@@ -31,30 +31,6 @@
 </head>
 
 <body class="bg-[#f7f2f2] polka">
-    <!-- <div class="hidden lg:block">
-
-        <div class="h-20 flex justify-between p-4 mt-3 ">
-            <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[20px]">Akshay
-            </h2>
-
-            <div class="flex justify-between rounded-full bg-[#ede9e9] p-2 gap-1">
-                <a href="index.html">
-                    <div class="rounded-full text-black  w-20 text-center p-1">All</div>
-                </a>
-                <a href="index2.html">
-                    <div class="bg-white rounded-full text-black w-16 text-center p-1">About</div>
-                </a>
-                <a href="#projects">
-                    <div class="rounded-full text-black  w-20 text-center p-1">Projects</div>
-                </a>
-                <a href="#">
-                    <div class="rounded-full text-black  w-20 text-center p-1">Media</div>
-                </a>
-            </div>
-            <div>...</div>
-        </div>
-    </div> -->
-
 
     <nav class="w-full z-20 top-0 start-0 h-20 mb-6">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -62,10 +38,9 @@
             </h2>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
-                <button data-collapse-toggle="navbar-sticky"
-                    class="rounded-full bg-white relative flex hover:ring-4 ring-gray-200 border-2 border-gray-200 md:hidden"
-                    aria-controls="navbar-sticky" aria-expanded="false">
-                    <img class="w-10 lg:w-16" src="/assets2/download.svg" alt="">
+                <button data-collapse-toggle="navbar-sticky" class="md:hidden" aria-controls="navbar-sticky"
+                    aria-expanded="false">
+                    <img class="w-14 lg:w-16" src="/assets2/menu.svg" alt="">
                 </button>
             </div>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 z-20 p-5"
@@ -92,18 +67,59 @@
     <div class="container mx-auto grid grid-cols-2  lg:grid-cols-4 gap-4 p-4 px-12 xl:px-32 pb-20 content">
         <!-- Profile and experience -->
         <div
-            class="bg-white col-span-2 md:col-span-1 lg:col-span-3 lg:row-span-2 rounded-[30px] p-6 sm:p-10 flex flex-col gap-4 h-[560px] hover:shadow-lg">
-            <img class="w-20 lg:w-24" src="/assets2/img/Me.png" alt="">
+            class="bg-white col-span-2 md:col-span-1 lg:col-span-3 lg:row-span-2 rounded-[30px] p-16 sm:p-16 flex flex-col gap-4 h-[560px] hover:shadow-lg">
             <div class="relative inline-block">
-                <p class="font-medium text-gray-500">I’m
-                    <span class="font-bold font-playwrite text-2xl text-black relative inline-block">
-                        Akshay
-                        <img src="/assets2/img/line-1.svg" alt="line" class="absolute -bottom-2 left-0 w-full h-4">
-                    </span>, a Software Developer from Kerala, India. I'm interested in PHP, Laravel, Tailwind Design,
-                    Startups,
-                    Technology
-                    and Music.
-                </p>
+                <div class="flex items-center">
+                    <img class="w-10 lg:w-16" src="/assets2/rocket.svg" alt="">
+                    <h1 class="text-2xl font-semibold mb-6">Work Experience</h1>
+                </div>
+                <div class="">
+                    <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
+
+                        <div class="flex md:contents">
+                            <div class="col-start-2 col-end-1 mr-10 md:mx-auto relative">
+                                <div class="h-full w-6 flex items-center justify-center">
+                                    <div class="h-full w-1 bg-yellow-500 pointer-events-none"></div>
+                                </div>
+                                <div
+                                    class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-yellow-500 shadow text-center">
+                                    <span class="relative flex w-6 h-6">
+                                        <span
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-600 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full w-6 h-6 bg-yellow-500"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-green-500 col-start-2 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                <h3 class="font-semibold text-sm mb-1">Cloudrevel Innovations</h3>
+                                <p class="leading-tight text-sm  text-justify w-full">
+                                    March 2023, Present
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex md:contents">
+                            <div class="col-start-2 col-end-1 mr-10 md:mx-auto relative">
+                                <div class="h-full w-6 flex items-center justify-center">
+                                    <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                </div>
+                                <div
+                                    class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
+                                    
+                                </div>
+                            </div>
+                            <div
+                                class="bg-green-500 col-start-2 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                <h3 class="font-semibold text-sm mb-1">AOF Engineering Systems</h3>
+                                <p class="leading-tight text-sm text-justify">
+                                    September 2022, February 2023
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
         <!-- social mail linked in github -->
@@ -285,31 +301,12 @@
         <!-- Projects -->
         <div id="projects"
             class="bg-white col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-2 rounded-[30px] p-6 md:p-10 flex flex-col justify-between hover:shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" height="80" width="80" viewBox="-33.4974 -55.829 290.3108 334.974">
-                <path
-                    d="M177.707 98.987c-35.992-21.375-95.36-23.34-129.719-12.912-5.519 1.674-11.353-1.44-13.024-6.958-1.672-5.521 1.439-11.352 6.96-13.029 39.443-11.972 105.008-9.66 146.443 14.936 4.964 2.947 6.59 9.356 3.649 14.31-2.944 4.963-9.359 6.6-14.31 3.653m-1.178 31.658c-2.525 4.098-7.883 5.383-11.975 2.867-30.005-18.444-75.762-23.788-111.262-13.012-4.603 1.39-9.466-1.204-10.864-5.8a8.717 8.717 0 015.805-10.856c40.553-12.307 90.968-6.347 125.432 14.833 4.092 2.52 5.38 7.88 2.864 11.968m-13.663 30.404a6.954 6.954 0 01-9.569 2.316c-26.22-16.025-59.223-19.644-98.09-10.766a6.955 6.955 0 01-8.331-5.232 6.95 6.95 0 015.233-8.334c42.533-9.722 79.017-5.538 108.448 12.446a6.96 6.96 0 012.31 9.57M111.656 0C49.992 0 0 49.99 0 111.656c0 61.672 49.992 111.66 111.657 111.66 61.668 0 111.659-49.988 111.659-111.66C223.316 49.991 173.326 0 111.657 0"
-                    fill="#1ed660" />
-            </svg>
+            <div class="flex items-center">
+                <img class="w-10 lg:w-16" src="/assets2/cursor.svg" alt="">
+                <h1 class="text-2xl font-semibold mb-6">Projects</h1>
+            </div>
             <div>
-                <p class="font-medium text-green-600 items-center flex">
-                    <svg width="28px" height="28px" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"
-                        fill="#26a269">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-                        <g id="SVGRepo_iconCarrier">
-                            <g fill="none" fill-rule="evenodd" stroke="#33d17a" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="m6.5 8.5v4" />
-                                <path d="m8.5 6.5v9" />
-                                <path d="m10.5 9.5v2" />
-                                <path d="m12.5 7.5v6.814" />
-                                <path d="m14.5 4.5v12" />
-                            </g>
-                        </g>
-                    </svg><span class="text-green-900 text-sm">Ofline, Last Played </span>
-                </p>
-                <h1 class="font-bold font-serif text-2xl">I Dont Belog</h1>
-                <p class="font-medium text-gray-500">Foundainess DC</p>
+
             </div>
         </div>
         <!-- Linked In -->
