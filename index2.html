@@ -441,15 +441,15 @@
                 <div class="weather-container items-center">
                     <!-- Weather Image and temperature -->
                     <div class="flex justify-between items-center">
-                        <img id="weather-icon" class="weather-icon" src="" alt="Weather Icon">
+                        <img id="weather-icon" class="weather-icon" src="" alt="">
                         <div>
                             <p class="font-bold text-transparent bg-clip-text bg-gradient-to-r to-blue-200 from-white text-6xl"
-                                id="temperature"></p>
-                            <p class="font-mono text-white" id="description"></p>
+                                id="temperature">00.00</p>
+                            <p class="font-mono text-white" id="description">N/A</p>
                         </div>
                     </div>
                     <!-- Current Location -->
-                    <p class="text-xl font-semibold text-white uppercase" id="location"></p>
+                    <p class="text-xl font-semibold text-white uppercase" id="location">Unknown</p>
                     <!-- wind , cloud, air -->
                     <div class="grid gap-2 grid-cols-3 items-center mt-6">
                         <div class="p-2 flex flex-col justify-center items-center">
@@ -466,7 +466,7 @@
                                     fill="#296399" />
                             </svg>
                             <!--  -->
-                            <p class="text-xs text-[#296399]  mt-2" id="wind-speed"></p>
+                            <p class="text-xs text-[#296399]  mt-2" id="wind-speed">00</p>
 
                         </div>
                         <div class="p-2 flex flex-col justify-center items-center">
@@ -477,7 +477,7 @@
                                     fill="#296399" />
                             </svg>
                             <!--  -->
-                            <p class="text-xs text-[#296399] mt-2" id="cloudiness"></p>
+                            <p class="text-xs text-[#296399] mt-2" id="cloudiness">00</p>
                         </div>
                         <div class="p-2 flex flex-col justify-center items-center">
                             <svg width="30" height="30" viewBox="0 0 16 16" fill="none"
@@ -487,12 +487,11 @@
                                     fill="#296399" />
                             </svg>
                             <!--  -->
-                            <p class="text-xs text-[#296399] mt-2" id="air-quality"></p>
+                            <p class="text-xs text-[#296399] mt-2" id="air-quality">00</p>
                         </div>
                     </div>
                     <!-- error -->
-                    <p id="error-message" style="color: red;"></p>
-
+                    <p class="text-xs" id="error-message" style="color: rgb(182, 81, 81);"></p>
                 </div>
             </div>
 
@@ -643,7 +642,7 @@
                     <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[30px]">Marker at heart.</h2>
                 </div>
                 <div class="flex justify-between items-center">
-                    <div class="grid gap-2 grid-cols-3 content-center">
+                    <div class="grid md:gap-2 grid-col-2 md:grid-cols-3 content-center">
                         <div>
                             <div
                                 class="bg-white w-44 h-16 rounded-lg flex items-center justify-start drop-shadow-md hover:shadow-lg">
@@ -759,13 +758,14 @@
                 if (data.cod === 401) {
                     throw new Error('Invalid API key');
                 }
-                const location = data.name;
-                const temperature = data.main.temp.toFixed(1);;
-                const description = data.weather[0].description;
-                const iconCode = data.weather[0].icon;
+                const location = data.name || 'N/A';
+                const temperature = data.main.temp ? data.main.temp.toFixed(1) : 'N/A';
+                const description = data.weather[0]?.description || 'N/A';
+                const iconCode = data.weather[0]?.icon || '01d'; // Default icon if not available
                 const iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
-                const windSpeed = data.wind.speed;
-                const cloudiness = data.clouds.all;
+                const windSpeed = data.wind.speed || 'N/A';
+                const cloudiness = data.clouds.all || 'N/A';
+
 
                 document.getElementById('location').textContent = `${location}`;
                 document.getElementById('temperature').textContent = `${temperature}°`;
@@ -776,10 +776,16 @@
             })
             .catch(error => {
                 console.error('Error fetching weather data:', error);
+                document.getElementById('location').textContent = 'N/A';
+                document.getElementById('temperature').textContent = 'N/A';
+                document.getElementById('description').textContent = 'N/A';
+                document.getElementById('weather-icon').src = ''; // Hide icon if an error occurs
+                document.getElementById('weather-icon').style.display = 'none';
+                document.getElementById('wind-speed').textContent = 'N/A';
+                document.getElementById('cloudiness').textContent = 'N/A';
                 document.getElementById('error-message').textContent = `Error: ${error.message}`;
             });
 
-        // Fetch air quality data
         fetch(airQualityUrl)
             .then(response => {
                 if (!response.ok) {
@@ -788,15 +794,12 @@
                 return response.json();
             })
             .then(data => {
-                if (data.cod === 401) {
-                    throw new Error('Invalid API key');
-                }
                 const airQualityIndex = data.list[0].main.aqi;
                 document.getElementById('air-quality').textContent = `${airQualityIndex}`;
             })
             .catch(error => {
                 console.error('Error fetching air quality data:', error);
-                document.getElementById('error-message').textContent = `Error: ${error.message}`;
+                document.getElementById('air-quality').textContent = `N/A`; // Set default value here
             });
     }
 
