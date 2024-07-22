@@ -63,6 +63,28 @@
                 /* Adjust 4px to match the gap */
             }
         }
+
+        .typing-demo {
+            width: 14ch;
+            animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #98d0ff;
+            font-family: monospace;
+            font-size: 2em;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent
+            }
+        }
     </style>
 </head>
 
@@ -89,9 +111,8 @@
                 </h2>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
-                    <button data-collapse-toggle="navbar-sticky"
-                        class="md:hidden"
-                        aria-controls="navbar-sticky" aria-expanded="false">
+                    <button data-collapse-toggle="navbar-sticky" class="md:hidden" aria-controls="navbar-sticky"
+                        aria-expanded="false">
                         <img class="w-14 lg:w-16" src="/assets2/menu.svg" alt="">
                     </button>
                 </div>
@@ -450,7 +471,7 @@
                     </a>
                 </div>
                 <img class="w-16 lg:w-16 relative" src="/assets2/Party popper.svg" alt="">
-                <h2 class="font-bold font-raleway text-[25px] lg:text-[30px] relative">Get In Touch</h2>
+                <h2 class="font-bold font-raleway text-[25px] lg:text-[30px] relative typing-demo">Get In Touch</h2>
                 <p class="font-medium text-gray-500 relative">sr.dev.akshay@gmail.com</p>
 
                 <form action="mailto:sr.dev.akshay@gmail.com" method="post" enctype="text/plain" class="form" data-form

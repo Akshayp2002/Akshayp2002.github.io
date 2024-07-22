@@ -59,6 +59,27 @@
                 transform: translateY(calc(-100% - 4px));
             }
         }
+        .typing-demo {
+            width: 14ch;
+            animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #98d0ff;
+            font-family: monospace;
+            font-size: 2em;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent
+            }
+        }
     </style>
 </head>
 
@@ -635,54 +656,20 @@
             <!-- Yellow card -->
 
             <div
-                class="bg-white col-span-2 md:col-span-1 lg:col-span-2 rounded-[30px] p-6 lg:p-10 h-[280px] flex flex-col justify-between hover:shadow-lg bg-cover bg-center">
-                <div>
-                    <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[30px]">Marker at heart.</h2>
+                class="bg-white col-span-2 md:col-span-1 lg:col-span-2 rounded-[30px] p-6 lg:p-7 h-[280px] hover:shadow-lg bg-cover bg-center">
+
+                <div class="container">
+                    <h2 class="font-bold font-playwrite text-sky-800 text-[25px] lg:text-[30px] p-1 text">Marker at
+                        heart.</h2>
                 </div>
-                <div class="flex justify-between items-center">
-                    <div class="grid md:gap-2 grid-col-2 md:grid-cols-3 content-center">
-                        <div>
-                            <div
-                                class="bg-white w-44 h-16 rounded-lg flex items-center justify-start drop-shadow-md hover:shadow-lg">
-                                <img class="w-14 lg:w-16" src="/assets2/rocket.svg" alt="">
-                                <p class="text-xs text-gray-500">Building stuff from scratch</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                class="bg-white w-44 h-16 rounded-lg flex items-center justify-start drop-shadow-md hover:shadow-lg">
-                                <img class="w-14 lg:w-16" src="/assets2/rocket.svg" alt="">
-                                <p class="text-xs text-gray-500">architectuer and big picture stuff</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                class="bg-white w-44 h-16 rounded-lg flex items-center justify-start drop-shadow-md hover:shadow-lg">
-                                <img class="w-14 lg:w-16" src="/assets2/rocket.svg" alt="">
-                                <p class="text-xs text-gray-500">Clean code</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                class="bg-white w-44 h-16 rounded-lg flex items-center justify-start drop-shadow-md hover:shadow-lg">
-                                <img class="w-14 lg:w-16" src="/assets2/rocket.svg" alt="">
-                                <p class="text-xs text-gray-500">Designing and implemetating UI</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                class="bg-white w-44 h-16 rounded-lg flex items-center justify-start drop-shadow-md hover:shadow-lg">
-                                <img class="w-14 lg:w-16" src="/assets2/rocket.svg" alt="">
-                                <p class="text-xs text-gray-500">Working outside the confort zone </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                class="bg-white w-44 h-16 rounded-lg flex items-center justify-start drop-shadow-md hover:shadow-lg">
-                                <img class="w-14 lg:w-16" src="/assets2/rocket.svg" alt="">
-                                <p class="text-xs text-gray-500">Having a strong grasp in CS concepts</p>
-                            </div>
-                        </div>
+                <div class="flex justify-between items-center ">
+                    <div class="content-center">
+                        <p class="text-lg text-green-500 font-playwrite">Crafting from scratch</p>
+                        <p class="text-lg text-sky-500 font-playwrite">Big-picture architecture</p>
+                        <p class="text-lg text-yellow-500 font-playwrite">Pristine code</p>
+                        <p class="text-lg text-red-500 font-playwrite">UI design & implementation</p>
+                        <p class="text-lg text-purple-500 font-playwrite">Pushing comfort zones</p>
+                        <p class="text-lg text-pink-500 font-playwrite">Strong CS foundations</p>
                     </div>
                 </div>
             </div>
@@ -690,7 +677,7 @@
             <!-- Last card -->
 
             <div
-                class="bg-white col-span-2 rounded-[30px] relative h-[280px] hover:shadow-lg p-4 px-12 pb-20 overflow-hidden">
+                class="bg-white col-span-2 rounded-[30px] relative h-[280px] hover:shadow-lg p-4 px-12 pb-20 overflow-hidden wrapper">
                 <div
                     class="bg-[#98d0ff] rounded-bl-full w-48 h-44 absolute top-0 right-0 flex items-center justify-center">
                     <a href="https://drive.google.com/uc?export=download&id=1z8qQnXCCrZhcK4x0mmtytyW7FNt1eRqf" download
@@ -702,7 +689,7 @@
                     </a>
                 </div>
                 <img class="w-16 lg:w-16 relative" src="/assets2/Party popper.svg" alt="">
-                <h2 class="font-bold font-raleway text-[25px] lg:text-[30px] relative">Get In Touch</h2>
+                <h2 class="font-bold font-raleway text-[25px] lg:text-[30px] relative typing-demo">Get In Touch</h2>
                 <p class="font-medium text-gray-500 relative">sr.dev.akshay@gmail.com</p>
 
                 <form action="mailto:sr.dev.akshay@gmail.com" method="post" enctype="text/plain" class="form" data-form
@@ -714,6 +701,7 @@
                     </button>
                 </form>
             </div>
+            
         </div>
     </div>
 </body>
@@ -819,6 +807,88 @@
 
     // Get location on page load
     window.onload = getLocation;
+
+
+    // ——————————————————————————————————————————————————
+    // TextScramble
+    // ——————————————————————————————————————————————————
+
+    class TextScramble {
+        constructor(el) {
+            this.el = el;
+            this.chars = "!<>-_\\/[]{}—=+*^?#________";
+            this.update = this.update.bind(this);
+        }
+        setText(newText) {
+            const oldText = this.el.innerText;
+            const length = Math.max(oldText.length, newText.length);
+            const promise = new Promise((resolve) => (this.resolve = resolve));
+            this.queue = [];
+            for (let i = 0; i < length; i++) {
+                const from = oldText[i] || "";
+                const to = newText[i] || "";
+                const start = Math.floor(Math.random() * 40);
+                const end = start + Math.floor(Math.random() * 40);
+                this.queue.push({ from, to, start, end });
+            }
+            cancelAnimationFrame(this.frameRequest);
+            this.frame = 0;
+            this.update();
+            return promise;
+        }
+        update() {
+            let output = "";
+            let complete = 0;
+            for (let i = 0, n = this.queue.length; i < n; i++) {
+                let { from, to, start, end, char } = this.queue[i];
+                if (this.frame >= end) {
+                    complete++;
+                    output += to;
+                } else if (this.frame >= start) {
+                    if (!char || Math.random() < 0.28) {
+                        char = this.randomChar();
+                        this.queue[i].char = char;
+                    }
+                    output += `<span class="dud">${char}</span>`;
+                } else {
+                    output += from;
+                }
+            }
+            this.el.innerHTML = output;
+            if (complete === this.queue.length) {
+                this.resolve();
+            } else {
+                this.frameRequest = requestAnimationFrame(this.update);
+                this.frame++;
+            }
+        }
+        randomChar() {
+            return this.chars[Math.floor(Math.random() * this.chars.length)];
+        }
+    }
+
+    // ——————————————————————————————————————————————————
+    // Example
+    // ——————————————————————————————————————————————————
+
+    const phrases = [
+        "Marker at heart,",
+        "Crafting with passion.",
+        "Challenging boundaries.",
+    ];
+
+    const el = document.querySelector(".text");
+    const fx = new TextScramble(el);
+
+    let counter = 0;
+    const next = () => {
+        fx.setText(phrases[counter]).then(() => {
+            setTimeout(next, 3000);
+        });
+        counter = (counter + 1) % phrases.length;
+    };
+    next();
+
 </script>
 
 </html>
